@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <div class="note_list_heading text-center mb-5">
+            <h1 class="fs-4">These are the notes</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    {% for note in notes %}
+    <div class="col-md-4">
+        <div class="card mb-3">
+            <div class="card-header bg-black text-white">
+                <li class='note-li'>{{note.title}}</li>
+            </div>
+            <div class="card-body">
+                <p>{{note.text|truncatechars:15}}</p>
+            </div>
+            <div class="card-footer">
+                <a href="{% url 'notes.detail' pk=note.id %}" class="btn btn-info btn-sm">View Note</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}

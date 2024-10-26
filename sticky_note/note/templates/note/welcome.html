@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-mb-8">
+        <div class="home-hold text-center">
+            <h1>Welcome to Sticky App</h1>
+            <p>Where you can write notes of your choice and save it for future use</p>
+            <a href="{% url "notes.lis" %}" class="btn btn-success">Go to Sticky Note</a>
+        </div>
+    </div>  
+</div>
+    
+{% endblock content %}

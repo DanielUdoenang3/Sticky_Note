@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-dark text-white">Confirm Delete</div>
+            <div class="card-body">
+                <div class="confirm-message text-center">
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <p>Are you sure you want to delete?<q>{{note.title}}</q></p>
+                        <p>This action cant be undone</p>
+                        <input type="submit" class="btn btn-sm btn-danger" value="Confirm">
+                        <a href="{% url 'notes.lis' %}" class='btn btn-sm btn-success'>No</a>
+                    </form>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
